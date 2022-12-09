@@ -272,7 +272,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &120541822
@@ -2131,6 +2131,7 @@ GameObject:
   - component: {fileID: 429443297}
   - component: {fileID: 429443296}
   - component: {fileID: 429443298}
+  - component: {fileID: 429443299}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -2216,6 +2217,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &429443299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429443294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248410410f5fbfb4381852e1529e4ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thingy: {fileID: 584129891}
 --- !u!1 &434038254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,10 +3184,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 542142024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7686f14e1b40c8c438f9d5b45182ffb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b3c7cbbd35c11147b08fec09cb4f2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theThing: {fileID: 429443294}
+  activate: {fileID: 429443294}
+  deactivate: {fileID: 584129891}
 --- !u!1 &559515335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,7 +4397,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &692330367
@@ -4556,7 +4571,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &702745274
@@ -4890,7 +4905,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &732384325
@@ -6696,7 +6711,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1212287474
@@ -8667,7 +8682,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1563915008

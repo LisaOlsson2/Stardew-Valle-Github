@@ -55,6 +55,7 @@ public class Characters : CharactersBase
 
     public virtual void Update()
     {
+
         // talking
 
         if (interactable && Input.GetKeyDown(KeyCode.Z) && !infoThingy.playerScript.inventory.activeSelf)

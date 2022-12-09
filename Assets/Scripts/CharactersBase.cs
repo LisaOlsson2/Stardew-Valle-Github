@@ -12,7 +12,7 @@ public class CharactersBase : BaseThings
         animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
@@ -29,4 +29,5 @@ public class CharactersBase : BaseThings
             }
         }
     }
+
 }
