@@ -19,7 +19,6 @@ public class BaseThings : MonoBehaviour
     public void UpdateProgress(int place)
     {
         infoThingy.progress[place] = System.Convert.ToChar(infoThingy.progress[place] + 1); // add one to the progress
-
         BaseThings[] arvObjekt = FindObjectsOfType<BaseThings>();
 
         foreach (BaseThings objekt in arvObjekt)
