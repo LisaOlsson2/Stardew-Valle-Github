@@ -36,7 +36,11 @@ public class InventoryOptions : InventoryThings
         }
 
         currentRow = -2;
-        currentColumn = (int)((soundButtons[currentRow + 2].anchoredPosition.x + 40) * 10) / 80;
+        currentColumn = (int)(infoThingy.musicVolume * 10);
+
+        soundButtons[0].anchoredPosition = new Vector3((int)(infoThingy.musicVolume * 10) * 8 - 40, soundButtons[0].anchoredPosition.y, 0);
+        soundButtons[1].anchoredPosition = new Vector3((int)(infoThingy.soundVolume * 10) * 8 - 40, soundButtons[1].anchoredPosition.y, 0);
+
         transform.position = soundButtons[0].transform.position;
         transform.localScale = scaleSound;
     }
@@ -59,7 +63,7 @@ public class InventoryOptions : InventoryThings
                     {
                         transform.localScale = scaleSound;
                     }
-                    currentColumn = (int)((soundButtons[currentRow + 2].anchoredPosition.x + 40) * 10) / 80;
+                    currentColumn = (int)((soundButtons[currentRow + 2].anchoredPosition.x + 40)) / 8;
                     transform.position = soundButtons[currentRow + 2].transform.position;
                 }
             }
@@ -98,7 +102,7 @@ public class InventoryOptions : InventoryThings
                     transform.position = onOffButtons[currentColumn, currentRow].transform.position;
                 }
             }
-            else if (currentColumn < 10)
+            else if (currentColumn < 9)
             {
                 currentColumn++;
                 soundButtons[currentRow + 2].anchoredPosition = new Vector3(currentColumn * 8 - 40, soundButtons[currentRow + 2].anchoredPosition.y, 0);
@@ -107,6 +111,7 @@ public class InventoryOptions : InventoryThings
                 if (currentRow == -1)
                 {
                     infoThingy.soundVolume = currentColumn / 10f;
+                    infoThingy.SetSoundVolume();
                 }
                 else
                 {
@@ -130,6 +135,7 @@ public class InventoryOptions : InventoryThings
                 if (currentRow == -1)
                 {
                     infoThingy.soundVolume = currentColumn / 10f;
+                    infoThingy.SetSoundVolume();
                 }
                 else
                 {

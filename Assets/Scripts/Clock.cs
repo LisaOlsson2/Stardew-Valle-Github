@@ -48,6 +48,8 @@ public class Clock : BaseThings
         }
         else
         {
+            infoThingy.date++;
+            FindObjectOfType<CameraFollow>().Start();
             infoThingy.clock = 0;
         }
 

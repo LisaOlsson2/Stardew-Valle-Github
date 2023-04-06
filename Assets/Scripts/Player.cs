@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Player : CharactersBase
 {
-
     public GameObject inventory;
     public GameObject dialogue;
 
@@ -19,7 +18,7 @@ public class Player : CharactersBase
 
     // Start is called before the first frame update
     void Start()
-    {  
+    {
         infoThingy = FindObjectOfType<InfoToSave>();
         AnotherStartThingy();
 
@@ -31,6 +30,7 @@ public class Player : CharactersBase
         else
         {
             infoThingy.playerScript = this;
+            infoThingy.SetSoundVolume();
 
             transform.position = infoThingy.spawn;
             text = dialogue.transform.GetChild(1).GetComponent<Text>();
@@ -92,4 +92,5 @@ public class Player : CharactersBase
             }
         }
     }
+
 }

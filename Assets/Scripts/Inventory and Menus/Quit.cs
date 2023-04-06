@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Quit : Button
 {
-    InfoToSave book;
+    InfoToSave infoThingy;
 
     void Start()
     {
-        book = FindObjectOfType<InfoToSave>();
+        infoThingy = FindObjectOfType<InfoToSave>();
     }
 
     public override void Do()
     {
         Screen.fullScreen = true;
-        PlayerPrefs.SetFloat("musicVolume", book.musicVolume);
-        PlayerPrefs.SetFloat("soundVolume", book.soundVolume);
+
+        infoThingy.SetPrefs();
+
         PlayerPrefs.Save();
         Application.Quit();
     }

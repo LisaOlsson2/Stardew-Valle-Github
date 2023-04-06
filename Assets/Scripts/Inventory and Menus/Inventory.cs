@@ -73,6 +73,8 @@ public class Inventory : BaseThings
             }
             else
             {
+                infoThingy.SetPrefs();
+                Destroy(infoThingy.gameObject);
                 SceneManager.LoadScene(buttons[current].gameObject.name);
             }
         }

@@ -917,18 +917,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca288cded41d5424c8976929bb93092a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 
-  file: 0
   progress: 
-  spawn: {x: 0, y: 0, z: 0}
+  file: 0
+  player: 
+  playerScript: {fileID: 0}
+  bed: {x: 0, y: 0, z: 0}
   musicVolume: 0
   soundVolume: 0
+  spawn: {x: 0, y: 0, z: 0}
+  date: 0
   clock: 0
-  musicAudio: []
-  currentMusic: {fileID: 0}
-  season: 0
-  currentScene: 
-  playerScript: {fileID: 0}
 --- !u!4 &118929610
 Transform:
   m_ObjectHideFlags: 0

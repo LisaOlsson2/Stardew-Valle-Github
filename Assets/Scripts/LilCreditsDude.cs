@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LilCreditsDude : MonoBehaviour
 {
-    InfoToSave book;
+    InfoToSave infoThingy;
 
-    float speed = 8;
+    readonly float speed = 8;
     bool grounded;
     bool interactable;
 
     // Start is called before the first frame update
     void Start()
     {
-        book = FindObjectOfType <InfoToSave>();
+        infoThingy = FindObjectOfType <InfoToSave>();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class LilCreditsDude : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) || (interactable && Input.GetKeyDown(KeyCode.Z)))
         {
-            Destroy(book.gameObject);
+            Destroy(infoThingy.gameObject);
             SceneManager.LoadScene("Start");
         }
 

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Lexa : Characters
 {
@@ -12,7 +11,7 @@ public class Lexa : Characters
     public override void Start()
     {
         base.Start();
-        randomSecondsBeforeHerTailWaves = 5;
+        randomSecondsBeforeHerTailWaves = Random.Range(1f, 11f);
     }
 
     // Update is called once per frame

@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class Characters : CharactersBase
 {
-    bool interactable;
-
-    string greeting;
-
     [SerializeField]
     GameObject portraitObject;
 
-    public readonly string lineChangerString = "change lines";
-
     readonly string[,] namesAndGreets = { { "Valle", "YOO" }, { "Noah", "Whats up motherfuckers" }, { "Lisa", "Helo :)" }, { "Lily", "Hey" }, { "Frank", "Sup?" }, { "Eddie", "Good morning" }, { "Alex", "Greetings mortal" }, { "Leo", "Hello" } };
     public string[][] allLines; // lines are set seperately in every npc script
-                               //each array/row is a dialogue
+                                //each array/row is a dialogue
 
+    public readonly string lineChangerString = "change lines";
+    
     string[] currentLines;
+    string greeting;
 
     int line;
+    bool interactable;
     public bool talkable;
+
+    readonly float speed = 4;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -55,7 +55,6 @@ public class Characters : CharactersBase
 
     public virtual void Update()
     {
-
         // talking
 
         if (interactable && Input.GetKeyDown(KeyCode.Z) && !infoThingy.playerScript.inventory.activeSelf)
@@ -115,6 +114,9 @@ public class Characters : CharactersBase
                 }
             }
         }
+
+
+        // something else
     }
 
     void SetNewLines(int row)

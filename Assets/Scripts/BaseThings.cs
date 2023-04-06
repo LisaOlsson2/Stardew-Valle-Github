@@ -6,26 +6,37 @@ public class BaseThings : MonoBehaviour
 {
     public static InfoToSave infoThingy;
     
-    public string[,] progressTriggers = new string[9, 10];
-    // column 0 is empty to make things easier to keep track of
+    public readonly string[,] progressTriggers = new string[10, 9]; // [10, infothingy.progressLength]
 
-    /*
-    void SetColumns()
-    {
-        progressTriggers = new string[infoThingy.progress.Length, 10];
-    }
+    /* progressTriggers
+    |   |   |   |   |   |   |   |   |   |   |   Leo
+    |   |1,7|   |   |   |   |   |   |   |   |   Alex
+    |   |   |   |   |   |   |   |   |   |   |   Eddie
+    |   |   |   |   |   |   |   |   |   |   |   Frank
+    |   |   |   |   |   |   |   |   |   |   |   Lisa
+    |   |   |   |   |   |   |   |   |   |   |   Lily
+    |   |   |   |   |   |   |   |   |   |   |   Noah
+    |   |   |   |   |   |   |   |   |   |   |   Valle
+    | X |   |   |   |   |   |   |   |   |   |   Player
     */
 
     public void UpdateProgress(int place)
     {
-        infoThingy.progress[place] = System.Convert.ToChar(infoThingy.progress[place] + 1); // add one to the progress
+        if (place == 0 || infoThingy.progress[place] - 48 >= 9)
+        {
+            print("don't do that");
+            return;
+        }
+
+        infoThingy.progress[place]++;
+
         BaseThings[] arvObjekt = FindObjectsOfType<BaseThings>();
 
         foreach (BaseThings objekt in arvObjekt)
         {
-            if (objekt.progressTriggers[place, infoThingy.progress[place] - 48] != "")
+            if (objekt.progressTriggers[infoThingy.progress[place] - 48, place] != "")
             {
-                objekt.Change(objekt.progressTriggers[place, infoThingy.progress[place] - 48]);
+                objekt.Change(objekt.progressTriggers[infoThingy.progress[place] - 48, place]);
             }
         }
     }
